@@ -63,7 +63,7 @@ const { Sequelize, DataTypes } = require('sequelize');
 
 const sequelize = new Sequelize({
   dialect: 'sqlite',
-  storage: './databases/users.db',
+  storage: './databases/booking.db',
 });
 
 const User = sequelize.define('User', {
