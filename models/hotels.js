@@ -9,6 +9,11 @@ const Hotel = sequelize.define('Hotel', {
   id: {
     type: DataTypes.STRING,
     allowNull: false,
+    primaryKey: true,
+  },
+  hotel_id: {
+    type: DataTypes.STRING,
+    allowNull: false,
   },
   name: {
     type: DataTypes.STRING,
@@ -28,10 +33,10 @@ const Hotel = sequelize.define('Hotel', {
 // (async () => {
 //   try {
 //     await sequelize.sync({ force: true });
-//     console.log('Users table created successfully.');
+//     console.log('Hotels table created successfully.');
 //   } catch (error) {
 //     console.error('Error creating Users table:', error);
 //   }
 // })();
 
-module.exports = User;
+module.exports = Hotel;

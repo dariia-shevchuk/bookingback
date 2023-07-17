@@ -6,6 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var hotelsRouter = require('./routes/hotels');
+var rooms = require('./routes/rooms');
 
 var app = express();
 
@@ -21,9 +23,11 @@ app.use(cors());
 const { Sequelize } = require('sequelize');
 const sequelize = new Sequelize({
   dialect: 'sqlite',
-  storage: './databases/users.db',
+  storage: './databases/booking.db',
 });
 const User = require('./models/user');
+const Room = require('./models/rooms');
+const Hotel = require('./models/hotels');
 
 sequelize.sync({ alter: true }).then(() => {
   console.log('Database synced');
@@ -43,6 +47,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/rooms', rooms);
+app.use('/hotels', hotelsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

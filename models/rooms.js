@@ -9,6 +9,7 @@ const Room = sequelize.define('Room', {
     id: {
         type: DataTypes.STRING,
         allowNull: false,
+        primaryKey: true,
       },
       hostel_id: {
         type: DataTypes.STRING,
@@ -16,6 +17,10 @@ const Room = sequelize.define('Room', {
       },
       price: {
         type: DataTypes.STRING,
+        allowNull: false,
+      },
+      maxGuests: {
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       bed: {
@@ -32,10 +37,10 @@ const Room = sequelize.define('Room', {
 // (async () => {
 //   try {
 //     await sequelize.sync({ force: true });
-//     console.log('Users table created successfully.');
+//     console.log('Room table created successfully.');
 //   } catch (error) {
 //     console.error('Error creating Users table:', error);
 //   }
 // })();
 
-module.exports = User;
+module.exports = Room;
