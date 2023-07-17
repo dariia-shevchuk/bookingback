@@ -6,11 +6,6 @@ const sequelize = new Sequelize({
 });
 
 const Hotel = sequelize.define('Hotel', {
-  id: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    primaryKey: true,
-  },
   hotel_id: {
     type: DataTypes.STRING,
     allowNull: false,

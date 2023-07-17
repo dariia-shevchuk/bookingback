@@ -6,12 +6,7 @@ const sequelize = new Sequelize({
 });
 
 const Room = sequelize.define('Room', {
-    id: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        primaryKey: true,
-      },
-      hostel_id: {
+      hotel_id: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -24,11 +19,11 @@ const Room = sequelize.define('Room', {
         allowNull: false,
       },
       bed: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       availability: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.BOOLEAN,
         allowNull: false,
       },
 });

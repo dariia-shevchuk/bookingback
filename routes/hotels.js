@@ -15,4 +15,22 @@ router.post('/', async (req, res) => {
     }
   });
 
+  router.get('/', async (req, res) => {
+    try {
+      const hotels = await Hotel.findAll();
+      res.json(hotels);
+    } catch (error) {
+      res.status(500).json({ error: 'Failed to fetch users' });
+    }
+  });
+
+  router.get('/:id', async (req, res) => {
+    const hotelId = req.params.id;
+    try {
+      console.log(hotelId)
+    } catch (error) {
+      res.status(500).json({ error: 'Failed to fetch user' });
+    }
+  });
+
   module.exports = router;

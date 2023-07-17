@@ -26,6 +26,7 @@ router.get('/', async (req, res) => {
 // Get a specific user by ID
 router.get('/:email', async (req, res) => {
   const userEmail = req.params.email;
+  console.log(userEmail);
   try {
     const user = await User.findOne({
       where: {
