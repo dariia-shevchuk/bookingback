@@ -13,6 +13,9 @@ const hotelsRouter = require('./routes/hotels');
 // const usersRouter = require('./routes/users');
 const roomsRouter = require('./routes/rooms');
 
+const attractionsRouter = require('./routes/attractions');
+const housesRouter = require('./routes/houses');
+
 var app = express();
 
 const cors = require('cors');
@@ -32,6 +35,8 @@ const sequelize = new Sequelize({
 const User = require('./models/user');
 const Room = require('./models/rooms');
 const Hotel = require('./models/hotels');
+const House = require('./models/house');
+const Attraction = require('./models/attraction');
 
 sequelize.sync({ alter: true }).then(() => {
   console.log('Database synced');
@@ -53,6 +58,9 @@ app.use('/', indexRouter);
 app.use('/hotels', hotelsRouter);
 app.use('/users', usersRouter);
 app.use('/rooms', roomsRouter);
+// app.use('/attractions', attractionsRouter);
+app.use('/houses', housesRouter);
+app.use('/attract', attractionsRouter);
 
 
 // catch 404 and forward to error handler
