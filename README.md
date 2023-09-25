@@ -9,7 +9,7 @@ npm install
 ### Compile and start
 
 ```sh
-npm start
+npm run start
 ```
 
 ### Restarting database
